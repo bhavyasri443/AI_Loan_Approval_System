@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Analysis Report</title>
+
+    <style>
+
+        body{
+            font-family:Arial,sans-serif;
+            background:#eef2f7;
+            padding:40px;
+        }
+
+        .container{
+            max-width:1100px;
+            margin:auto;
+        }
+
+        .header{
+            background:linear-gradient(135deg,#3498db,#2980b9);
+            color:white;
+            padding:30px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cards{
+            display:flex;
+            gap:20px;
+            flex-wrap:wrap;
+            margin-top:30px;
+        }
+
+        .card{
+            flex:1;
+            min-width:250px;
+            background:white;
+            padding:25px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card h2{
+            color:#3498db;
+            margin-bottom:10px;
+        }
+
+        .full-card{
+            background:white;
+            margin-top:25px;
+            padding:30px;
+            border-radius:15px;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .emi-section{
+            background:white;
+            margin-top:30px;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .emi-cards{
+            display:flex;
+            gap:20px;
+            flex-wrap:wrap;
+            margin-top:20px;
+        }
+
+        .emi-card{
+            flex:1;
+            min-width:200px;
+            background:#3498db;
+            color:white;
+            padding:20px;
+            border-radius:12px;
+            text-align:center;
+        }
+
+        button{
+            margin-top:30px;
+            padding:12px 25px;
+            border:none;
+            border-radius:8px;
+            background:#3498db;
+            color:white;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#2980b9;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>Loan Analysis Report</h1>
+
+        {% if result == "Loan Approved" %}
+            <h2 style="color:#2ecc71;">{{ result }}</h2>
+        {% else %}
+            <h2 style="color:#e74c3c;">{{ result }}</h2>
+        {% endif %}
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>{{ score }}</h2>
+            <p>Financial Score</p>
+        </div>
+
+        <div class="card">
+            <h2>{{ risk }}</h2>
+            <p>Risk Level</p>
+        </div>
+
+        <div class="card">
+            <h2>{{ stability }}</h2>
+            <p>Job Stability</p>
+        </div>
+
+    </div>
+
+    <div class="full-card">
+        <h2>₹{{ future_income }}</h2>
+        <p>Future Income Prediction</p>
+    </div>
+
+    <div class="emi-section">
+
+        <h2>EMI Options</h2>
+
+        <div class="emi-cards">
+
+            <div class="emi-card">
+                <h2>12 Months</h2>
+                <h3>₹{{ emi_12 }}</h3>
+            </div>
+
+            <div class="emi-card">
+                <h2>24 Months</h2>
+                <h3>₹{{ emi_24 }}</h3>
+            </div>
+
+            <div class="emi-card">
+                <h2>36 Months</h2>
+                <h3>₹{{ emi_36 }}</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="full-card">
+        <h2>₹{{ recommended_loan }}</h2>
+        <p>Recommended Loan Amount</p>
+    </div>
+
+    <div class="full-card">
+        <h2>Financial Suggestion</h2>
+        <p>{{ suggestion }}</p>
+    </div>
+
+    <a href="/">
+        <button>Home</button>
+    </a>
+
+</div>
+
+</body>
+</html>

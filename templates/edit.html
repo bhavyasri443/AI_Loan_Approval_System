@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Applicant</title>
+
+    <style>
+
+        body{
+            font-family:Arial,sans-serif;
+            background:#eef2f7;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            width:500px;
+            background:white;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            text-align:center;
+            color:#3498db;
+            margin-bottom:25px;
+        }
+
+        label{
+            display:block;
+            margin-top:12px;
+            font-weight:bold;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin-top:5px;
+            border:1px solid #ccc;
+            border-radius:8px;
+        }
+
+        button{
+            width:100%;
+            margin-top:20px;
+            padding:12px;
+            border:none;
+            border-radius:8px;
+            background:#3498db;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#2980b9;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Edit Applicant</h1>
+
+    <form action="/update/{{ data[0] }}" method="POST">
+
+        <label>Name</label>
+        <input type="text" name="name" value="{{ data[1] }}" required>
+
+        <label>Age</label>
+        <input type="number" name="age" value="{{ data[2] }}" required>
+
+        <label>Income</label>
+        <input type="number" name="income" value="{{ data[3] }}" required>
+
+        <label>Credit Score</label>
+        <input type="number" name="credit_score" value="{{ data[4] }}" required>
+
+        <label>Loan Amount</label>
+        <input type="number" name="loan_amount" value="{{ data[5] }}" required>
+
+        <button type="submit">
+            Update Applicant
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

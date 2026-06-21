@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Loan Application Form</title>
+
+<style>
+
+    body{
+        margin:0;
+        font-family:Arial,sans-serif;
+        background:#eef2f7;
+    }
+
+    .container{
+        width:500px;
+        margin:50px auto;
+        background:white;
+        padding:30px;
+        border-radius:15px;
+        box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    h1{
+        text-align:center;
+        color:#3498db;
+        margin-bottom:30px;
+    }
+
+    label{
+        display:block;
+        margin-top:15px;
+        font-weight:bold;
+    }
+
+    input,
+    select{
+        width:100%;
+        padding:12px;
+        margin-top:5px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        font-size:16px;
+    }
+
+    button{
+        width:100%;
+        padding:15px;
+        margin-top:25px;
+        border:none;
+        border-radius:8px;
+        background:#3498db;
+        color:white;
+        font-size:18px;
+        cursor:pointer;
+    }
+
+    button:hover{
+        background:#2980b9;
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+
+<h1>Loan Application Form</h1>
+
+<form action="/predict" method="POST">
+
+    <label>Name</label>
+    <input type="text" name="name" required>
+
+    <label>Age</label>
+    <input type="number" name="age" required>
+
+    <label>Monthly Income</label>
+    <input type="number" name="income" required>
+
+    <label>Credit Score</label>
+    <input type="number" name="credit_score" required>
+
+    <label>Loan Amount</label>
+    <input type="number" name="loan_amount" required>
+
+    <label>Job Type</label>
+    <select name="job_type">
+        <option value="government">Government</option>
+        <option value="private">Private</option>
+        <option value="business">Business</option>
+    </select>
+
+    <label>Years of Experience</label>
+    <input type="number" name="experience" required>
+
+    <button type="submit">
+        Check Loan Eligibility
+    </button>
+
+</form>
+</div>
+
+</body>
+</html>
